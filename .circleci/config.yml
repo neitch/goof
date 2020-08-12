@@ -12,12 +12,4 @@ workflows:
     # Run the welcome/run job in its own container
     jobs:
       - welcome/run
-
-jobs:
-  build:
-    docker:
-      - image: "circleci/node:4.8.2"
-    steps:
-      - checkout
-      - run: npm install -q
       - snyk/scan
